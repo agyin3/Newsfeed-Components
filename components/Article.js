@@ -1,8 +1,9 @@
-/* This is the data we will be using to create our article components */
-/* Look over this data, then proceed to line 91*/
+// This is the data we will be using to create our articles. Look at it, then proceed to line 93.
+// OPTIONAL: if you're feeling adventurous, try to make this data an export from a different module, and import it here.
+// You can read about ES6 modules here: https://exploringjs.com/es6/ch_modules.html#sec_basics-of-es6-modules
 const data = [
   {
-    title: 'Lambda School Students: "We\'re the best!"',
+    title: 'BloomTech Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
@@ -88,27 +89,28 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
+/*
+  Step 1: Write a component called 'articleMaker' to create an article.
+  Your component is a function that takes an article object as its only argument,
+  and returns a DOM node looking like the one below:
+
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
 
     {three separate paragraph elements}
 
-    <span class='expandButton'></span>
+    <span class="expandButton">+</span>
   </div>
 
-  Hint: You will need to use createElement more than once here!
+  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  This listener should toggle the class 'article-open' on div.article.
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Step 3: Don't forget to return something from your function!
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
+  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  Refresh the page to see the new article.
 */
